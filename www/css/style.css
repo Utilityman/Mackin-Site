@@ -1,0 +1,58 @@
+
+.container {
+  max-width: 864px;
+}
+
+.content {
+  padding: 8px;
+  background: #cccccc;
+  min-height: calc(100vh - 160px);
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+.content > .row {
+  margin-bottom: 16px;
+  margin: 8px;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.footer {
+  background-color: #222;
+}
+
+.footer > .container > .row {
+}
+
+.footer > .container > .row > div {
+  background-color: #222;
+  padding: 8px;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+  height: 80px;
+}
+
+.footer > .container > .row > div > p {
+  margin: 0;
+}
+
+.title-with-image {
+  line-height: 75px;
+}
+
+.title-with-image > h2.title {
+    display:inline;
+    vertical-align: middle;
+}
+
+.title-with-image > img.title-image {
+  float: right;
+  width: 60px;
+}
+
+
+
+.bright-text {color: #fdfdfd;}
+.img-center {margin:0 auto;}
+.img-small {width: 60px;}

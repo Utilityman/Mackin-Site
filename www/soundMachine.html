@@ -39,46 +39,55 @@
 
 
         <div class='content'>
-            <h2>Welcome!</h2>
-            <p>This is my website where I hightlight interesting projects that I've worked on in my free time.</p>
+            <div class='title-with-image'>
+              <h2 class='title'>
+                Sound Machine
+              </h2>
+              <img class='title-image' src="http://i.imgur.com/rApXcSs.png">
 
-            <div class='row'>
-              <div class='col-sm-6'>
-                <h3>Sound Machine</h3>
-                <p>Perhaps the most universally interesting project that I have worked on, my Sound Machine.</p>
-                <p>
-                  Basically at some point I sat down and thought 'Hey, I really want to not use like... iTunes
-                  to listen to music'. And so I began writing this application.
-                </p>
-                <p style='display:none'>
-                  At this point I really only knew Java and so I set off to do my project in Java and ended up
-                  completely scrapping the project in favor of learning Javascript and using the flexible
-                  <a target="_blank" href='https://electron.atom.io/'>Electron</a>
-                  framework to run and deploy the application.
-                </p>
-              </div>
-              <div class='col-sm-6'>
-                <img class='img-responsive img-center' src="http://i.imgur.com/rApXcSs.png">
-              </div>
+          </div>
+          <div class='row'>
+            <div class='col-sm-6'>
+              <p>
+                Deciding to make this app was easy, deciding how to build it was difficult.
+                The only thing that I wanted was that it would be built to be cross-platform.
+              </p>
+              <p>
+                At this point I really only knew Java and I knew that it was cross-platform enough.
+                And so I set off to do my project in Java and ended up completely scrapping the project
+                when trying to get a cool UI to come together.
+              </p>
+              <p>
+                Discord, the voice chat application, ended up being a huge inspiration. Its UI
+                looking clean and clear. Hoping to build something that was as usable as discord,
+                I looked into how they were built and found out about
+                <a target="_blank" href='https://electron.atom.io/'>Electron</a>.
+              </p>
             </div>
-
-            <div class='row'>
-              <div class='col-sm-6'>
-                <img class='img-responsive img-center img-rounded' src="http://i.imgur.com/5qWg33y.png">
-              </div>
-              <div class='col-sm-6'>
-                <h3>Just Some Game Development</h3>
-                <p>
-                  For some of us developers, we got into computer science thinking that the goal was to make
-                  games. And this was me living out the dream of trying to make a game.
-                </p>
-                <p>
-                  As it turns out, it's difficult for a bunch of different reasons.
-                </p>
-              </div>
+            <div class='col-sm-6'>
+              <img class='img-center img-responsive' src='imgs/discord-inspiration.png' />
             </div>
+          </div>
 
-            <p>More polished projects will be added to the front page as they become polished :)</p>
+          <div class='row'>
+            <div class='col-sm-6'>
+              <img class='img-center img-responsive' src='http://i.imgur.com/IjCCUHf.png' />
+            </div>
+            <div class='col-sm-6'>
+              <p>
+                Electron is a framework that runs node.js code in what appears to be a native
+                application but is actualy basically a Chrome window.
+              </p>
+              <p>
+                I ended up having to learn Javascript/CSS/HTML, the all of it, to make this possible.
+                Node.js's npm made much of this application. From running the music through howler.js
+                to doing the networking with express/socket.io, the featureless became featurefull with
+                all of the easily accessible and usable packages.
+              </p>
+            </div>
+          </div>
+
+            <p class='content-footer'><a href='https://github.com/Utilityman/SoundMachine'>Find On Github</a></p>
         </div>
     </div>
 
