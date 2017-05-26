@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+    html, body { width:100%; height:100%; } /* just to be sure these are full screen*/
+
+    canvas {
+      display: block;
+      padding: 8px;
+    }
+  </style>
+
+</head>
+  <body>
+      <canvas id='canvas'></canvas>
+  </body>
+  <script>
+
+  let Drop = function (x, y) {
+    this.x = x;
+    this.y = y;
+    this.width = 3;
+    this.height = 5;
+    this.radius = 2;
+  };
+
+  Drop.prototype.step = function (ctx, canvas) {
+    if (this.x > canvas.width) {
+      // out of bounds X - remove and stop tracking this one -- if drops are quick enough maybe don't worry about it
+    } else if (this.y > canvas.height) {
+      // out of bounds bottom - remove drop from tracking
+    } else {
+      ctx.fillStyle = 'white';
+
+      ctx.clearRect(this.x, this.y, this.width, this.height);
+
+      /*ctx.clearArc(this.x, this.y, this.radius, 0, 2 * Math.PI);
+      ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
+      ctx.fill();*/
+    }
+  };
+
+
+  (function () {
+    'use strict';
+    let canvas = document.getElementById('canvas');
+    let ctx = canvas.getContext('2d');
+
+    let drawDelay = 25;
+    let drawCount = 0;
+
+    const MAX_RAIN_DROPS = 1;
+    let drops = [];
+
+    window.addEventListener('resize', resizeCanvas, false);
+    function resizeCanvas () {
+      canvas.width = window.innerWidth - 16;
+      canvas.height = window.innerHeight - 16;
+      ctx.fillStyle = 'black';
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      drawCount = 0;
+      drawRain();
+    }
+    resizeCanvas();
+
+    function drawRain () {
+      if (drawCount < drawDelay) {
+        drawCount++;
+      } else {
+        if (drops.length < MAX_RAIN_DROPS) {
+          // populate rain drops
+          let x = Math.floor((Math.random() * canvas.width) + 1);
+          let drop  = new Drop(x, -10);
+          drops.push(drop);
+        }
+
+        for (let i = 0; i < drops.length; i++) {
+          drops[i].step(ctx, canvas);
+        }
+      }
+    }
+    setInterval(drawRain, 33); // 33 milliseconds = ~ 30 frames per sec
+
+
+    window.addEventListener('load', drawRain);
+  }) ();
+
+  </script>
+</html>
